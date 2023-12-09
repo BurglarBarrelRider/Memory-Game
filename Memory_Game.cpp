@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <random>
 #include <ctime>
@@ -26,10 +25,13 @@ const int MNSIZE = 6;
 // }
 
 
+// void clearConsole() {
+//     for (int i = 0; i < 50; ++i) {
+//         cout << endl; // Вывод пустых строк для "очистки" экрана
+//     }
+// }
 void clearConsole() {
-    for (int i = 0; i < 50; ++i) {
-        cout << endl; // Вывод пустых строк для "очистки" экрана
-    }
+    cout << "\033[2J\033[1;1H";
 }
 
 
@@ -119,7 +121,7 @@ int main() {
 
         opened[secondIndex] = true;
         cout << "The card at index " << RED << secondIndex << RESET_COLOR << YELLOW << " is: " << RESET_COLOR << RED << array[secondIndex] << RESET_COLOR << endl;
-
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         if (array[firstIndex] == array[secondIndex]) {
             cout << "Great! The cards are matched. " << BLUE << "Continue..." << RESET_COLOR << endl << endl;
         } else {
@@ -145,6 +147,15 @@ int main() {
                 break;
             }
         }
+        displayArray(array, size, opened);
+        
+        // string input;
+        // while (getline(cin, input)) {
+        //     if (input.empty()) {
+        //         clearConsole();
+        //         break;
+        //     }
+        // }
         
         // clearConsole();
         // cin.get(); // Ожидание Enter
