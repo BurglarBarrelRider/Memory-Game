@@ -25,3 +25,5 @@ Push the complete Memory Game project to your GitHub repository.
 Prepare a comprehensive set of instructions in the Readme.md file.
 Include details on the game setup, rules, and how to interact with the game.
 Submit the link of your GitHub repository.
+
+// Had a lot of trouble with the logic and writing functions, had an urge to use external code sources. Thank you for attention!
